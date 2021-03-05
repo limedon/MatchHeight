@@ -67,6 +67,22 @@
 				item.el.style.minHeight = '';
 			});
 			process();
+		},
+		remove: function remove(){
+			if (initialized) {
+				initialized = false;
+				if (elements.length === 0) return;
+	
+				remains = Array.prototype.map.call(elements, function (el) {
+	
+					return { el: el };
+				});
+				// remove all height before
+				remains.forEach(function (item) {
+	
+					item.el.style.minHeight = '';
+				});
+			}
 		}
 	};
 
